@@ -17,7 +17,7 @@
 
 
     // TODO: Create an array of the three game choices (Rock, Paper, or Scissors).
-    var gameChoices = ["Rock", "Paper", "Scissors"];
+    var gameChoices = ["r", "p", "s"];
 
 
     // TODO: Create variables to hold the number of wins, losses, and ties. They start at 0.
@@ -39,18 +39,20 @@
       //     window.alert("Alright, let's begin!"); }
 
       // TODO: Collect the user's response and convert to lower case. This is the user's turn.
-      var userTurn = window.prompt("Please enter rock, paper, or scissors to begin!");
+      var userTurn = window.prompt("Please enter r, p, or s to begin!");
+      userTurn = userTurn.toLocaleLowerCase();
 
-      if (userTurn === "Rock" || userTurn === "rock" || userTurn === "ROCK" === "R" === "r");
-      if (userTurn === "Paper" || userTurn === "paper" || userTurn === "PAPER" === "P" === "p");
-      if (userTurn === "Scissors" || userTurn === "scissors" || userTurn === "SCISSORS" === "S" === "s"); {
+      /*if (userTurn === "Rock" || userTurn === "rock" || userTurn === "ROCK" === "R" === "r")
+      if (userTurn === "Paper" || userTurn === "paper" || userTurn === "PAPER" === "P" === "p")
+      if (userTurn === "Scissors" || userTurn === "scissors" || userTurn === "SCISSORS" === "S" === "s") {  */
+        if (userTurn === 'r' || userTurn === 'p' || userTurn === 's') {
         alert("The computer chose " + computerTurn);
 
         // TODO: Create the game logic to run if the user chooses a valid game choice *HAD TO REFERENCE SOLVED FOR WINS++ PART
         if (
-          (userTurn === "Rock" && computerTurn === "Scissors") ||
-          (userTurn === "Scissors" && computerTurn === "Paper") ||
-          (userTurn === "Paper" && computerTurn === "Rock")
+          (userTurn === "r" && computerTurn === "s") ||
+          (userTurn === "s" && computerTurn === "p") ||
+          (userTurn === "p" && computerTurn === "r")
         ) {
           wins++;
           window.alert("Congrats! You've won " + wins + " time(s)!");
@@ -76,7 +78,19 @@
           "\nTotal losses: " +
           losses
         );
-  </script>
-</body>
+      
 
+
+// removed 3 ; semi colons at the end of line 45-47 ( I ENDED UP REMOVING THESE LINES BUT STILL THE SEMI COLONS WERE EFFECTING YOUR CODE)
+// changed all the variables to single letters
+// added line 43 to change single letters to lowercase        **doing single letters and only lowercase makes the operation way easier,
+//                                                             because instead of accounting for(Rock, rock, R, r, rOck, roCK), we're only accounting
+//                                                             for R/r and converting it to lowercase incae its capitol.
+//commented out lines 45-47; instead of all those if statements and || or comparisons we can just have one line on 48   
+
+
+  </script>
+  
+</body>
+ 
 </html>
